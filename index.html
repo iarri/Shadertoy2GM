@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+	
+<style type="text/css">
+	body 
+	{
+		background-color: #363636;
+	}
+	#input
+	{
+		position:absolute;
+		transition: .5s ease;
+		left: 115px;
+		top: 190px;
+	}
+	
+	#output
+	{
+		position:absolute;
+		transition: .5s ease;
+		left: 535px;
+		top: 190px;
+	}
+	
+	#VERTEX_output
+	{
+		position:absolute;
+		transition: .5s ease;
+		left: 950px;
+		top: 190px;
+	}
+	
+	
+	#CREATE_EVENT_output
+	{
+		position:absolute;
+		transition: .5s ease;
+		left: 535px;
+		top: 600px;
+	}
+	#DRAW_EVENT_output
+	{
+		position:absolute;
+		transition: .5s ease;
+		left: 950px;
+		top: 600px;
+	}
+	
+	
+	#convert 
+	{
+	 	background-color: #bbb;
+		padding: .5em;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 6px;
+		color: #fff;
+		font-family: 'Arial';
+		font-size: 20px;
+		text-decoration: none;
+		border: none;
+		
+		position:absolute;
+		transition: .5s ease;
+		left: 425px;
+		top: 590px;
+
+	}
+#convert:hover 
+	{
+	 border: none;
+	 background: #52FCDA;
+	 box-shadow: 0px 0px 1px #777;
+	}
+	
+	#convert:active
+	{
+	 background: #1abc9c;		
+	}
+
+	
+.header 
+{
+  	padding: 5px;
+  	text-align:center;
+  	background: #1abc9c;
+  	color: white;
+	font-family: 'Arial';
+  	font-size: 20px;
+}
+
+.label 
+	{
+	  color: white;
+	  font-family: Arial;
+	  position:absolute;
+	}
+	.l1{ left:115px; top: 170px;}
+	.l2{ left:535px; top: 170px;}
+	.l3{ left:950px; top: 170px;}
+	.l4{ left:535px; top: 580px;}
+	.l5{ left:950px; top: 580px;}
+	.l6{ left:120px; top: 680px;}
+	
+</style>
+	
+
+	<head>
+        <title>Shadertoy GLSL to Gamemaker</title>
+        <meta charset="iso-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<script src="scripts/functionWrap.js" type="text/javascript"></script>
+		<script src="scripts/uniformsConcat.js" type="text/javascript"></script>
+		<script src="scripts/wordReplace.js" type="text/javascript"></script>
+		<script src="scripts/createObjectCode.js" type="text/javascript"></script> 
+		<script src="scripts/drawObjectCode.js" type="text/javascript"></script> 
+		<script src="scripts/main.js" type="text/javascript"></script> 
+		
+		<link rel="shortcut icon" type="image/png" href="graphics/favicon.ico"/>
+    </head>
+	
+	
+
+	
+    <body>
+		
+		<div class="header">
+  			<h1>Shadertoy to GameMaker:Studio GLSL ES</h1>
+  			<p>A web app that converts Shadertoy.com GLSL code to GameMaker Studio GLSL code</p>
+		</div>
+		
+		<span class="label l1">Shadertoy Code</span>
+		
+		<textarea id = "input" name = "input" rows="25" cols="55" placeholder="SHADERTOY CODE GOES HERE" 
+				STYLE="color: #000000; background-color: #FFFFFF; border-color: #1abc9c; border-width: 2px; "></textarea>
+		
+		<span class="label l2">Gamemaker Shader Code</span>
+		<textarea id = "output" name = "output" rows="25" cols="55" placeholder="GAMEAKER SHADER CODE OUTPUT" 
+				STYLE="color: #000000; background-color: #FFFFFF;"></textarea>
+		
+		<span class="label l3">Vertex Code</span>
+		<textarea id = "VERTEX_output" name = "output" rows="25" cols="55" placeholder="VERTEX CODE OUTPUT"
+				STYLE="color: #000000; background-color: #FFFFFF;"></textarea>
+		
+		<span class="label l6">1. Paste Shadertoy shader code in designated textbox. <br>
+								2. Click Convert <br>
+								3. Create object in gamemaker with a sprite attached to it.<br>
+								4. paste output codes in gamemaker respectively.<br>
+								Note: More complex code will require you to make<br>
+								additional edits manualy.<br>
+								Draw object code outputs 512 by 512, but change it<br>
+								to your desired sprite size.
+		</span>
+		<button id="convert" button onclick="convertToGM_GLSL(); ">Convert</button>
+		
+		<span class="label l4">Object Create-Event Code</span>
+		<textarea id = "CREATE_EVENT_output" name = "output" rows="20" cols="55" placeholder="CREATE EVENT CODE OUTPUT"
+				STYLE="color: #000000; background-color: #FFFFFF;"></textarea>
+	
+		<span class="label l5">Object Draw-Event Code</span>
+		<textarea id = "DRAW_EVENT_output" name = "output2" rows="20" cols="55" placeholder="DRAW EVENT CODE OUTPUT" 
+				STYLE="color: #000000; background-color: #FFFFFF;"></textarea>
+    </body>
+	
+	
+	
+</html>
