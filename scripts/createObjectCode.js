@@ -6,11 +6,11 @@ function createObjectCode(createObjectCode_input)
 
     if(str1.includes('iGlobalTime') == true) 
     {
-        var createObjectCode_output = "Time = shader_get_uniform(shdr_distort,\"iGlobalTime\"); \n".concat(createObjectCode_output);
+        var createObjectCode_output = "Time = shader_get_uniform(SHADER_NAME_HERE,\"iGlobalTime\"); \n".concat(createObjectCode_output);
     }
     if(str1.includes('iResolution') == true)
     {
-        var createObjectCode_output = "Res = shader_get_uniform(shdr_distort,\"iResolution\"); \n".concat(createObjectCode_output);
+        var createObjectCode_output = "Res = shader_get_uniform(SHADER_NAME_HERE,\"iResolution\"); \n".concat(createObjectCode_output);
     }
 
     return createObjectCode_output;
