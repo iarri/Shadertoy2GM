@@ -17,7 +17,5 @@ function drawObjectCode(drawObjectCode_input)
     }
     
     drawObjectCode_output = "shader_set(SHADER_NAME_HERE) \n".concat(drawObjectCode_output);
-
-
     return drawObjectCode_output;
 }

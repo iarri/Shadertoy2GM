@@ -3,7 +3,7 @@ function functionWrap(functionWrap_input)
 {
     var result = functionWrap_input;
 
-    /* turn the base x parameter in pow(x, y) to an absolute value with abs() -> pow(abs(x), y)  */
+    /* turn the base x parameter in pow(x 'base', y 'exponent') to an absolute value with abs() -> pow(abs(x), y)  */
 
     while (  result.includes("pow(", n)  == true )     //while there exists " pow(" after index n...
     {
@@ -18,7 +18,7 @@ function functionWrap(functionWrap_input)
         var closedPar = 0;    //counter for closed parenthesis
 
 
-        if(result.charAt(n)!== 'a' && result.charAt(n+1)!== 'b' && result.charAt(n+2)!== 's')
+        if(result.charAt(n)!== 'a' && result.charAt(n+1)!== 'b' && result.charAt(n+2)!== 's')   //if the function does nor contain the abs function already
         {
             /* concat non-comma chars into the base 'x' */
             while(result.charAt(n) !== ',')     //while char at n in 'result' isn't a comma...
@@ -60,7 +60,7 @@ function functionWrap(functionWrap_input)
             }
         }
         else
-            n = n+1;
+            n++;
 
         /* if comma found, begin concating chars into exponent 'y' */
         if(result.charAt(n) == ',')     //if char at n in 'result' is a comma...
@@ -81,7 +81,7 @@ function functionWrap(functionWrap_input)
                     {
                         if(result.charAt(n) == '(')
                         {
-                            part_y = pre_x.concat(result.charAt(n));
+                            part_y = part_y.concat(result.charAt(n));
                             openPar++;
                         }
                         else if((result.charAt(n) !== '(') && (result.charAt(n) !== ')'))
@@ -100,7 +100,7 @@ function functionWrap(functionWrap_input)
                     n--;        //decremement n (so the char after the last close parenthesis wont be skipped...)
                 }
                 else
-                    part_y = part_y.concat(result.charAt(n));       //concat char at n to pre_x var
+                    part_y = part_y.concat(result.charAt(n));       //concat char at n to part_y var
                     n++; 
             }
         }

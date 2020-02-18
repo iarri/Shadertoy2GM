@@ -104,7 +104,6 @@
 	.l6{ left:120px; top: 680px;}
 	
 </style>
-	
 
 	<head>
         <title>Shadertoy GLSL to Gamemaker</title>
@@ -120,10 +119,7 @@
 		
 		<link rel="shortcut icon" type="image/png" href="graphics/favicon.ico"/>
     </head>
-	
-	
 
-	
     <body>
 		
 		<div class="header">
@@ -144,10 +140,10 @@
 		<textarea id = "VERTEX_output" name = "output" rows="25" cols="55" placeholder="VERTEX CODE OUTPUT"
 				STYLE="color: #000000; background-color: #FFFFFF;"></textarea>
 		
-		<span class="label l6">1. Paste Shadertoy shader code in designated textbox. <br>
+		<span class="label l6"> 1. Paste Shadertoy shader code in designated textbox. <br>
 								2. Click Convert <br>
 								3. Create object in gamemaker with a sprite attached to it.<br>
-								4. paste output codes in gamemaker respectively.<br>
+								4. Paste output codes in gamemaker respectively.<br>
 								Note: More complex code will require you to make<br>
 								additional edits manualy.<br>
 								Draw object code outputs 512 by 512, but change it<br>
@@ -158,6 +154,7 @@
 								that won't work.<br>
 								 <a href="https://shadertoyunofficial.wordpress.com/2017/02/16/webgl-2-0-vs-webgl-1-0/">Here is a list of changes.</a>
 		</span>
+
 		<button id="convert" button onclick="convertToGM_GLSL(); ">Convert</button>
 		
 		<span class="label l4">Object Create-Event Code</span>
@@ -168,7 +165,5 @@
 		<textarea id = "DRAW_EVENT_output" name = "output2" rows="20" cols="55" placeholder="DRAW EVENT CODE OUTPUT" 
 				STYLE="color: #000000; background-color: #FFFFFF;"></textarea>
     </body>
-	
-	
 	
 </html>

@@ -2,7 +2,7 @@
 function createObjectCode(createObjectCode_input)
 {
     var str1 = createObjectCode_input;
-    var createObjectCode_output = "";
+    var createObjectCode_output = "";   //return blank if neith iGlobaltime or iResolution is found.
 
     if(str1.includes('iGlobalTime') == true) 
     {
