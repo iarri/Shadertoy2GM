@@ -27,8 +27,8 @@
 	{
 		position:absolute;
 		transition: .5s ease;
-		left: 950px;
-		top: 190px;
+		left: 535px;
+		top: 600px;
 	}
 	
 	
@@ -36,21 +36,28 @@
 	{
 		position:absolute;
 		transition: .5s ease;
-		left: 535px;
-		top: 600px;
+		left: 950px;
+		top: 190px;
 	}
 	#DRAW_EVENT_output
 	{
 		position:absolute;
 		transition: .5s ease;
 		left: 950px;
-		top: 600px;
+		top: 450px;
 	}
-	
+
+	#WARNINGS_output
+	{
+		position:absolute;
+		transition: .5s ease;
+		left: 950px;
+		top: 710px;
+	}
 	
 	#convert 
 	{
-	 	background-color: #bbb;
+	 	background-color: rgb(167, 167, 167);
 		padding: .5em;
 		-moz-border-radius: 5px;
 		-webkit-border-radius: 5px;
@@ -79,10 +86,9 @@
 	 background: #1abc9c;		
 	}
 
-	
 .header 
 {
-  	padding: 5px;
+  	padding: .2px;
   	text-align:center;
   	background: #1abc9c;
   	color: white;
@@ -96,12 +102,13 @@
 	  font-family: Arial;
 	  position:absolute;
 	}
-	.l1{ left:115px; top: 170px;}
-	.l2{ left:535px; top: 170px;}
-	.l3{ left:950px; top: 170px;}
-	.l4{ left:535px; top: 580px;}
-	.l5{ left:950px; top: 580px;}
-	.l6{ left:120px; top: 680px;}
+	.l1{ left:115px; top: 170px;}	/*Shadertoy code*/
+	.l2{ left:535px; top: 170px;}	/*GM shader code */
+	.l3{ left:950px; top: 170px;}	/*Obj create event code */
+	.l4{ left:535px; top: 580px;}	/*vertex code*/
+	.l5{ left:950px; top: 430px;}	/*Obj Draw-Event Code*/
+	.l6{ left:120px; top: 640px;}	/*Steps and notes */
+	.l7{ left:950px; top: 690px;}	/*warnings */
 	
 </style>
 
@@ -115,6 +122,7 @@
 		<script src="scripts/wordReplace.js" type="text/javascript"></script>
 		<script src="scripts/createObjectCode.js" type="text/javascript"></script> 
 		<script src="scripts/drawObjectCode.js" type="text/javascript"></script> 
+		<script src="scripts/checkWarnings.js" type="text/javascript"></script> 
 		<script src="scripts/main.js" type="text/javascript"></script> 
 		
 		<link rel="shortcut icon" type="image/png" href="graphics/favicon.ico"/>
@@ -129,40 +137,47 @@
 		
 		<span class="label l1">Shadertoy Code</span>
 		
-		<textarea id = "input" name = "input" rows="25" cols="55" placeholder="SHADERTOY CODE GOES HERE" 
+		<textarea id = "input" rows="25" cols="55" placeholder="SHADERTOY CODE GOES HERE" 
 				STYLE="color: #000000; background-color: #FFFFFF; border-color: #1abc9c; border-width: 2px; "></textarea>
 		
 		<span class="label l2">Gamemaker Shader Code</span>
-		<textarea id = "output" name = "output" rows="25" cols="55" placeholder="GAMEAKER SHADER CODE OUTPUT" 
+		<textarea id = "output" rows="25" cols="55" placeholder="GAMEAKER SHADER CODE OUTPUT" 
 				STYLE="color: #000000; background-color: #FFFFFF;"></textarea>
 		
-		<span class="label l3">Vertex Code</span>
-		<textarea id = "VERTEX_output" name = "output" rows="25" cols="55" placeholder="VERTEX CODE OUTPUT"
+		<span class="label l3">Object Create-Event Code</span>
+		<textarea id = "CREATE_EVENT_output" rows="15" cols="55" placeholder="VERTEX CODE OUTPUT"
 				STYLE="color: #000000; background-color: #FFFFFF;"></textarea>
 		
 		<span class="label l6"> 1. Paste Shadertoy shader code in designated textbox. <br>
-								2. Click Convert <br>
+								2. Click Convert. <br>
 								3. Create object in gamemaker with a sprite attached to it.<br>
 								4. Paste output codes in gamemaker respectively.<br>
-								Note: More complex code will require you to make<br>
+								Note: 
+								•More complex code will require you to make<br>
 								additional edits manualy.<br>
-								Draw object code outputs 512 by 512, but change it<br>
-								to your desired sprite size.<br><br>
+								•Draw object code outputs 512 by 512, but change it<br>
+								to your desired sprite size.<br>
+								•Abide by the terms of use for shadertoy shaders <br>
+								especially in the case of commercial use.<br><br>
 
-								ShaderToy now uses WebGL 2.0 while GM uses the <br>
+								•ShaderToy now uses WebGL 2.0 while GM uses the <br>
 								equivalent of WebGL 1.0 so there are several features <br>
 								that won't work.<br>
-								 <a href="https://shadertoyunofficial.wordpress.com/2017/02/16/webgl-2-0-vs-webgl-1-0/">Here is a list of changes.</a>
+								 <a href="https://shadertoyunofficial.wordpress.com/2017/02/16/webgl-2-0-vs-webgl-1-0/" style="color:white"> Here is a list of changes.</a>
 		</span>
 
 		<button id="convert" button onclick="convertToGM_GLSL(); ">Convert</button>
 		
-		<span class="label l4">Object Create-Event Code</span>
-		<textarea id = "CREATE_EVENT_output" name = "output" rows="20" cols="55" placeholder="CREATE EVENT CODE OUTPUT"
+		<span class="label l4">Vertex Code</span>
+		<textarea id = "VERTEX_output" rows="20" cols="55" placeholder="CREATE EVENT CODE OUTPUT"
 				STYLE="color: #000000; background-color: #FFFFFF;"></textarea>
 	
 		<span class="label l5">Object Draw-Event Code</span>
-		<textarea id = "DRAW_EVENT_output" name = "output2" rows="20" cols="55" placeholder="DRAW EVENT CODE OUTPUT" 
+		<textarea id = "DRAW_EVENT_output" rows="15" cols="55" placeholder="DRAW EVENT CODE OUTPUT" 
+				STYLE="color: #000000; background-color: #FFFFFF;"></textarea>
+
+		<span class = "label l7"> Warnings</span>
+		<textarea id = "WARNINGS_output" rows="13" cols="55" placeholder="WARNINGS" 
 				STYLE="color: #000000; background-color: #FFFFFF;"></textarea>
     </body>
 	

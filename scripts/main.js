@@ -15,6 +15,7 @@ function convertToGM_GLSL()
         document.getElementById("VERTEX_output").value ="attribute vec3 in_Position; \nvarying vec2 fragCoord; \n void main() \n {\n    vec4 Position = vec4( in_Position, 1); \n   gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * Position; \n   fragCoord = in_Position.xy; \n }"
         document.getElementById("CREATE_EVENT_output").value = createObjectCode(outputCode);        //fourth function creates code for create-object code
         document.getElementById("DRAW_EVENT_output").value = drawObjectCode(outputCode);        //fifth function creates code for object draw
+        document.getElementById("WARNINGS_output").value = checkWarnings(outputCode);       //Sixth funxction checks for incompatible words/strings
     }
 
 } 
