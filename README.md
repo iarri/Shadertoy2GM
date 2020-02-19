@@ -14,6 +14,7 @@ This javascript webapp converts GLSL code from shadertoy.com to Gamemaker GLSL E
 * Adds ```uniform float iGlobalTime;```.
 * Edits the pow(x, y) function to pow(abs(x), y)
 * Outputs vertex, fragment, create event, and draw event.
+* Warns of incompatible commands.
 
 This works for simple shaders. More complex shaders require more manual work on your part.
 
