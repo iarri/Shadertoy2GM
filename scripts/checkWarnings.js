@@ -3,7 +3,7 @@ function checkWarnings(checkWarnings_input)
     var init_pass2 = checkWarnings_input;
     var warningsFound ="";
 
-    if(init_pass2.includes('length(') == true)
+    if(init_pass2.includes('.length(') == true)
     {
         warningsFound = "•length() method for getting the number of elements in an array (requires GLSL ES 1.2 or later) \n\n".concat(warningsFound);
     }
