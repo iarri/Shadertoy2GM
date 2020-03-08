@@ -1,22 +1,23 @@
 /* pow(x, y) -> pow(abs(x), y) */
-function functionWrap(functionWrap_input)
+function functionWrap(string_input, findFunc_input, funcWrap_input)
 {
-    var result = functionWrap_input;
+    var result = string_input;
+    var findFunc = findFunc_input.concat("(");
+    var funcWrap = funcWrap_input.concat("(");
 
     /* turn the base x parameter in pow(x 'base', y 'exponent') to an absolute value with abs() -> pow(abs(x), y)  */
 
-    while (  result.includes("pow(", n)  == true )     //while there exists " pow(" after index n...
+    while (  result.includes(findFunc, n)  == true )     //while there exists " pow(" after index n...
     {
         /* initialize string variables and counters */
-        var n = result.indexOf("pow(", n) + 4; // n is the index of where the first instance of "pow(" is plus 4 units of "lead"
+        var n = result.indexOf(findFunc, n) + 4; // n is the index of where the first instance of "pow(" is plus 4 units of "lead"
         var pre_x = "";     //store pre-changed x parameter
         var part_y = "";    //store y parameter
         var post_x = "";    //store post-change x parameter
-        var new_pow = "";   //the new power function with abs() around the x parameter
-        var old_pow = "";   //the old power function without abs()
+        var new_func = "";   //the new power function with abs() around the x parameter
+        var old_func = "";   //the old power function without abs()
         var openPar = 0;    //counter for open parenthesis
         var closedPar = 0;    //counter for closed parenthesis
-
 
         if(result.charAt(n)!== 'a' && result.charAt(n+1)!== 'b' && result.charAt(n+2)!== 's')   //if the function does nor contain the abs function already
         {
@@ -105,22 +106,22 @@ function functionWrap(functionWrap_input)
             }
         }
         /* new pow and old pow builder  */
-        post_x = "abs(".concat(pre_x);      //post_x = abs(x
+        post_x = funcWrap.concat(pre_x);      //post_x = abs(x
         post_x = post_x.concat(')');        //post_x = abs(x)
 
-        new_pow = "pow(".concat(post_x);   //new_pow = pow(abs(x)  
-        new_pow = new_pow.concat(',');      //new_pow = pow(abs(x),  
-        new_pow = new_pow.concat(part_y);   //new_pow = pow(abs(x) ,y
-        new_pow = new_pow. concat(')');     //new_pow = pow(abs(x) ,y)
+        new_func = findFunc.concat(post_x);   //new_func = pow(abs(x)  
+        new_func = new_func.concat(',');      //new_func = pow(abs(x),  
+        new_func = new_func.concat(part_y);   //new_func = pow(abs(x) ,y
+        new_func = new_func. concat(')');     //new_func = pow(abs(x) ,y)
 
-        old_pow = old_pow.concat("pow(");       //old_pow = pow(
-        old_pow = old_pow.concat(pre_x);        //old_pow = pow(x
-        old_pow = old_pow.concat(',');        //old_pow = pow(x,
-        old_pow = old_pow.concat(part_y);        //old_pow = pow(x,y
-        old_pow = old_pow.concat(')');        //old_pow = pow(x,y)
+        old_func = old_func.concat(findFunc);       //old_func = pow(
+        old_func = old_func.concat(pre_x);        //old_func = pow(x
+        old_func = old_func.concat(',');        //old_func = pow(x,
+        old_func = old_func.concat(part_y);        //old_func = pow(x,y
+        old_func = old_func.concat(')');        //old_func = pow(x,y)
 
         /* replace old power function with new in input string and increment n  */
-        result = result.replace(old_pow , new_pow)
+        result = result.replace(old_func , new_func)
         n++;
     }
 

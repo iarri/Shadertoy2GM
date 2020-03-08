@@ -6,7 +6,7 @@ function convertToGM_GLSL()
 
     var stringsConcated = uniformsConcat(wordsReplaced);    //Second function: concat necessary strings.
 
-    var outputCode = functionWrap(stringsConcated);     //Third function finds pow(,), if any, and changes it to pow(abs(),).
+    var outputCode = functionWrap(stringsConcated, "pow", "abs");     //Third function finds pow(,), if any, and changes it to pow(abs(),).
 
     /* display variables if input isn't empty */
     if((document.getElementById("input").value) !== "")

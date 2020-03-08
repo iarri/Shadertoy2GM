@@ -18,9 +18,7 @@ This javascript webapp converts GLSL code from shadertoy.com to Gamemaker GLSL E
 
 This works for simple shaders. More complex shaders require more manual work on your part.
 
-Tested/works with the following:
-* https://www.shadertoy.com/view/ldXGW4
-* 
-* 
+### What did I learn?
+✔️JavaScript text processing.
 
-Any feedback is welcomed :)
+Any feedback is welcome! :)
