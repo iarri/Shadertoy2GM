@@ -1,4 +1,5 @@
-# Shadertoy2GM
+# ![logo](graphics/Logo.png)Shadertoy2GM 
+
 
 This javascript webapp converts GLSL code from shadertoy.com to Gamemaker GLSL ES as well as output other necessary code to run.
 
