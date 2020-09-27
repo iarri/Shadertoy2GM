@@ -1,5 +1,5 @@
 # ![logo](graphics/Logo.png)Shadertoy2GM 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](spiralx44@hotmail.com)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/iarri32?locale.x=en_US)
 
 This javascript webapp converts GLSL code from shadertoy.com to Gamemaker GLSL ES as well as output other necessary code to run.
 
