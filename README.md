@@ -18,6 +18,20 @@ This javascript webapp converts GLSL code from shadertoy.com to Gamemaker GLSL E
 
 This works for simple shaders. More complex shaders require more manual work on your part.
 
+|Shader Inputs|Supported|  
+|---|---|
+|iResolution|✔|
+|iTime|✔|
+|iTimeDelta|❌|
+|iFrame|❌|
+|iChannelTime|❌|
+|iChannelResolution|❌|
+|iMouse|❌|
+|iChannel0|✔|
+|iDate|❌|
+|iSampleRate|❌|
+
+
 ### What did I learn?
 ✔️JavaScript text processing.
 
