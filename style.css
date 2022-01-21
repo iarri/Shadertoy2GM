@@ -97,10 +97,10 @@ body
 	  position:absolute;
 	}
 	.l1{ left:115px; top: 160px;}	/*Shadertoy code*/
-	.l2{ left:535px; top: 160px;}	/*GM shader code */
-	.l3{ left:950px; top: 160px;}	/*Obj create event code */
-	.l4{ left:535px; top: 570px;}	/*vertex code*/
-	.l5{ left:950px; top: 420px;}	/*Obj Draw-Event Code*/
+	.l2{ left:545px; top: 160px;}	/*GM shader code */
+	.l3{ left:960px; top: 160px;}	/*Obj create event code */
+	.l4{ left:545px; top: 570px;}	/*vertex code*/
+	.l5{ left:960px; top: 420px;}	/*Obj Draw-Event Code*/
 	.l6{ left:120px; top: 630px; font-size: 14px;}	/*Steps and notes */
-	.l7{ left:950px; top: 680px;}	/*warnings */
+	.l7{ left:960px; top: 680px;}	/*warnings */
 	
