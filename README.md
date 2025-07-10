@@ -36,7 +36,3 @@ This works for simple shaders. More complex shaders require more manual work on 
 ✔️JavaScript text processing.
 
 Any feedback is welcome! :)
-
-## Donate
-<a href="https://www.paypal.com/paypalme/iarri32"><img src="https://github.com/andreostrovsky/donate-with-paypal/blob/master/blue.svg" height="40"></a>  
-If you enjoyed this project — or just feeling generous, consider donating. Cheers!
